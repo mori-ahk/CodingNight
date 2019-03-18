@@ -5,4 +5,4 @@ Check your Github profile through your iPhone - iOS application
 - Fetching desired user's data from Github server.
 - Using ```Codable``` to parse recieved JSON from the server.
 - Connecting UI elements through ```IBAction``` and ```IBOutlet```.
-- 
+
