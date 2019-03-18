@@ -9,28 +9,21 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    //MARK: IBOutlets
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    //MARK: Properties
     var user: User?
+    
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         followersLabel.text = "\(user?.followers ?? 0)"
         followingLabel.text = "\(user?.following ?? 0)"
         nameLabel.text = user?.name
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

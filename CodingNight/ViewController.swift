@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: Properties
     var user: User?
+    
+    //MARK: IBOutlet
     @IBOutlet weak var usernameTextField: UITextField!
+    
+    //MARK: IBAction
     @IBAction func goButton(_ sender: Any) {
        let username = usernameTextField.text ?? ""
         fetchData(for: username) { (user) in
@@ -22,6 +27,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: Network call
     private func fetchData(for username: String, completionHandler: @escaping (User) -> Void) {
         let url = URL(string: "https://api.github.com/users/\(username)")
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -35,9 +41,10 @@ class ViewController: UIViewController {
         }.resume()
     }
     
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
